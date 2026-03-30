@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your Name — Student &amp; Aspiring Professional. Portfolio showcasing certifications, achievements, and skills.">
+  <title>Your Name — Portfolio</title>
+
+  <!-- Fonts: Cormorant Garant (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+     To update: change the logo initials, nav link labels, and
+     the href of the Download CV button to your actual CV file
+     path in assets/cv.pdf
+     ═══════════════════════════════════════════════════════════ -->
+<header class="site-header" id="site-header">
+  <nav class="nav-inner">
+
+    <!-- Logo: Change "YN." to your own initials or short name -->
+    <a href="#hero" class="nav-logo" aria-label="Back to top">YN<span class="logo-dot">.</span></a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#about"          class="nav-link">About</a></li>
+      <li><a href="#certifications" class="nav-link">Certifications</a></li>
+      <li><a href="#achievements"   class="nav-link">Achievements</a></li>
+      <li><a href="#contact"        class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <!-- Update href to point to your CV file in the assets/ folder -->
+      <a href="assets/cv.pdf" class="btn-nav" download>Download CV</a>
+
+      <!-- Hamburger (mobile only) -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- Mobile slide-down menu -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu-inner">
+    <ul class="mobile-nav-links" role="list">
+      <li><a href="#about"          class="mobile-nav-link">About</a></li>
+      <li><a href="#certifications" class="mobile-nav-link">Certifications</a></li>
+      <li><a href="#achievements"   class="mobile-nav-link">Achievements</a></li>
+      <li><a href="#contact"        class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <a href="assets/cv.pdf" class="btn-mobile-cv" download>Download CV</a>
+  </div>
+</div>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+     Update: your name, title, bio, and the "Class of" year
+     Also update the stat numbers (certs & achievements count)
+     ═══════════════════════════════════════════════════════════ -->
+<section id="hero" class="section-hero">
+  <div class="hero-inner container">
+
+    <div class="hero-text" data-reveal>
+      <span class="hero-eyebrow">Available for opportunities</span>
+
+      <!--
+        Name: Write your full name.
+        The last word will be italicised via CSS.
+        Use <em> around your last name for the accent style.
+      -->
+      <h1 class="hero-name">Your<br><em>Name</em></h1>
+
+      <!-- Short role / title line -->
+      <p class="hero-title">Student &amp; Aspiring Professional</p>
+
+      <!-- One-paragraph bio (2–3 sentences max) -->
+      <p class="hero-bio">
+        Driven by curiosity and a commitment to continuous growth.
+        Building skills, earning credentials, and carving a focused
+        path toward professional excellence — one disciplined step at a time.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#certifications" class="btn-primary">View My Work</a>
+        <a href="#contact"        class="btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+
+    <div class="hero-visual" data-reveal data-delay="200">
+      <div class="photo-frame">
+        <!--
+          Replace assets/photo.jpg with your own photo.
+          Recommended: portrait orientation, professional or clean background.
+          If no photo is available, the placeholder below is shown automatically.
+        -->
+        <img
+          src="assets/photo.jpg"
+          alt="Your Name"
+          class="hero-photo"
+          id="hero-photo"
+          onerror="this.style.display='none'; document.getElementById('photo-fallback').style.display='flex';"
+        >
+        <div class="photo-fallback" id="photo-fallback">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+        </div>
+        <!-- Update "Class of" year -->
+        <div class="photo-label">Class of 2025</div>
+      </div>
+
+      <!-- Update these numbers to match your actual cert & achievement count -->
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Certifications</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Achievements</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     ABOUT
+     Update: both paragraphs, the tag label, and the skills list
+     ═══════════════════════════════════════════════════════════ -->
+<section id="about" class="section-about">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-photo-col" data-reveal>
+        <div class="about-photo-frame">
+          <!--
+            Same photo as hero — or a different one if you prefer.
+            Both reference assets/photo.jpg by default.
+          -->
+          <img src="assets/photo.jpg" alt="Your Name" class="about-photo"
+               onerror="this.parentElement.classList.add('no-photo')">
+        </div>
+        <!-- Update this label to match your current status -->
+        <div class="about-badge">Student</div>
+      </div>
+
+      <div class="about-content" data-reveal data-delay="150">
+        <div class="section-eyebrow">About Me</div>
+        <h2 class="section-heading">A Little<br>About Me</h2>
+
+        <!--
+          Tell your story here.
+          Paragraph 1: Who you are, where you study, what drives you.
+          Paragraph 2: Your goals, ambitions, what you are working toward.
+        -->
+        <p>
+          Add your personal story here. Tell visitors who you are, where you study,
+          and what drives you forward. This is your chance to make a genuine human
+          connection — write in your own voice, directly from your experience.
+        </p>
+        <p>
+          Describe your goals, your work ethic, and what makes you stand out.
+          Mention what you are building toward and why this field excites you.
+          Keep it honest, focused, and human.
+        </p>
+
+        <div class="skills-section">
+          <h3 class="skills-label">Skills &amp; Tools</h3>
+          <div class="skills-tags">
+            <!--
+              Add or remove skill tags as needed.
+              Keep them relevant and specific — avoid listing everything.
+            -->
+            <span class="skill-tag">Microsoft Excel</span>
+            <span class="skill-tag">Data Analysis</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Research</span>
+            <span class="skill-tag">Presentation</span>
+            <span class="skill-tag">Critical Thinking</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     CERTIFICATIONS
+     To add a certification: copy one <article class="cert-item">
+     block and paste it below the others. Update the details.
+     To remove one: delete the full <article>...</article> block.
+     To remove the verify link: replace <a> with a <span>.
+     ═══════════════════════════════════════════════════════════ -->
+<section id="certifications" class="section-certs">
+  <div class="container">
+
+    <div class="section-header" data-reveal>
+      <div class="section-eyebrow">Credentials</div>
+      <h2 class="section-heading">Certifications</h2>
+      <p class="section-subtext">
+        A record of courses completed, skills verified, and knowledge earned
+        through recognised programs and institutions.
+      </p>
+    </div>
+
+    <div class="cert-list" data-reveal>
+
+      <!-- ─── Certification 1 ──────────────────────────────────── -->
+      <article class="cert-item">
+        <div class="cert-index">01</div>
+        <div class="cert-main">
+          <div class="cert-meta-row">
+            <span class="cert-issuer">Amazon Web Services</span>
+            <span class="cert-date">March 2024</span>
+          </div>
+          <h3 class="cert-name">AWS Cloud Practitioner</h3>
+        </div>
+        <a href="https://verify.example.com/abc123" target="_blank" rel="noopener noreferrer" class="cert-action">
+          Verify ↗
+        </a>
+      </article>
+
+      <!-- ─── Certification 2 ──────────────────────────────────── -->
+      <article class="cert-item">
+        <div class="cert-index">02</div>
+        <div class="cert-main">
+          <div class="cert-meta-row">
+            <span class="cert-issuer">Google</span>
+            <span class="cert-date">January 2024</span>
+          </div>
+          <h3 class="cert-name">Google Data Analytics Professional Certificate</h3>
+        </div>
+        <a href="https://verify.example.com/def456" target="_blank" rel="noopener noreferrer" class="cert-action">
+          Verify ↗
+        </a>
+      </article>
+
+      <!-- ─── Certification 3 ──────────────────────────────────── -->
+      <article class="cert-item">
+        <div class="cert-index">03</div>
+        <div class="cert-main">
+          <div class="cert-meta-row">
+            <span class="cert-issuer">Microsoft</span>
+            <span class="cert-date">November 2023</span>
+          </div>
+          <h3 class="cert-name">Microsoft Excel — Advanced Level</h3>
+        </div>
+        <!-- No verify URL for this one — use a span instead of a link -->
+        <span class="cert-action cert-action--muted">—</span>
+      </article>
+
+      <!-- ─── Add more certifications above this comment ──────── -->
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     ACHIEVEMENTS
+     To add an achievement: copy one <div class="timeline-item">
+     block and paste it before the closing comment. Update details.
+     To remove one: delete the full .timeline-item block.
+     ═══════════════════════════════════════════════════════════ -->
+<section id="achievements" class="section-achievements">
+  <div class="container">
+
+    <div class="section-header" data-reveal>
+      <div class="section-eyebrow">Milestones</div>
+      <h2 class="section-heading">Achievements</h2>
+      <p class="section-subtext">
+        Recognition earned, challenges met, and growth demonstrated —
+        a timeline of meaningful moments in the journey.
+      </p>
+    </div>
+
+    <div class="timeline" data-reveal>
+
+      <!-- ─── Achievement 1 ──────────────────────────────────── -->
+      <div class="timeline-item">
+        <div class="timeline-marker" aria-hidden="true">🎓</div>
+        <div class="timeline-body">
+          <div class="timeline-header">
+            <h3 class="timeline-title">Dean's List Recognition</h3>
+            <span class="timeline-date">January 2024</span>
+          </div>
+          <p class="timeline-desc">
+            Achieved high academic standing and was recognised on the Dean's List
+            for the 2023 academic year, reflecting consistent dedication to studies
+            and strong academic performance.
+          </p>
+        </div>
+      </div>
+
+      <!-- ─── Achievement 2 ──────────────────────────────────── -->
+      <div class="timeline-item">
+        <div class="timeline-marker" aria-hidden="true">🏆</div>
+        <div class="timeline-body">
+          <div class="timeline-header">
+            <h3 class="timeline-title">Hackathon Finalist</h3>
+            <span class="timeline-date">October 2023</span>
+          </div>
+          <p class="timeline-desc">
+            Competed in a regional technology hackathon and reached the finals,
+            presenting a data-driven solution to a real-world community challenge
+            alongside a team of four.
+          </p>
+        </div>
+      </div>
+
+      <!-- ─── Achievement 3 ──────────────────────────────────── -->
+      <div class="timeline-item">
+        <div class="timeline-marker" aria-hidden="true">📊</div>
+        <div class="timeline-body">
+          <div class="timeline-header">
+            <h3 class="timeline-title">Capstone Data Project — Distinction</h3>
+            <span class="timeline-date">September 2023</span>
+          </div>
+          <p class="timeline-desc">
+            Completed a comprehensive data analysis capstone project, earning
+            distinction for methodology clarity, depth of insight, and quality
+            of final presentation to an academic panel.
+          </p>
+        </div>
+      </div>
+
+      <!-- ─── Add more achievements above this comment ─────────── -->
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     CONTACT
+     Update every href, label value, and the intro paragraph.
+     For phone, update both the tel: link and the display text.
+     For location, just update the display text (no href needed).
+     ═══════════════════════════════════════════════════════════ -->
+<section id="contact" class="section-contact">
+  <div class="container">
+    <div class="contact-inner">
+
+      <div class="contact-text" data-reveal>
+        <div class="section-eyebrow">Get In Touch</div>
+        <h2 class="section-heading">Let's<br>Connect</h2>
+        <p>
+          I'm open to internships, part-time opportunities, and meaningful professional
+          connections. Whether you want to discuss a project, a collaboration,
+          or simply say hello — don't hesitate to reach out.
+        </p>
+      </div>
+
+      <div class="contact-methods" data-reveal data-delay="150">
+
+        <!-- Email -->
+        <a href="mailto:your.email@example.com" class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">your.email@example.com</span>
+          </div>
+          <span class="contact-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/yourname" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">linkedin.com/in/yourname</span>
+          </div>
+          <span class="contact-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/yourname" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">github.com/yourname</span>
+          </div>
+          <span class="contact-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <!-- Phone / WhatsApp -->
+        <a href="tel:+255000000000" class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.14h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.79a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">Phone / WhatsApp</span>
+            <span class="contact-value">+255 xxx xxx xxx</span>
+          </div>
+          <span class="contact-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <!-- Location (no link — just a display card) -->
+        <div class="contact-card contact-card--static">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">Location</span>
+            <span class="contact-value">Dar es Salaam, Tanzania</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+     Update your name and the social links below.
+     ═══════════════════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-name">Your Name</span>
+      <span class="footer-copy">© 2025 — All rights reserved.</span>
+      <div class="footer-socials">
+        <a href="https://linkedin.com/in/yourname" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="17" height="17"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://github.com/yourname" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="17" height="17"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
